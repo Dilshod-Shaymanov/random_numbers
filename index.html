@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Omad shou</title>
+    <link rel="stylesheet" href="./assets/style.css" />
+  </head>
+  <body>
+    <div id="main-view">
+      <div id="display-number">+998 00 000 00 00</div>
+      <button id="random-btn">Goo...</button>
+    </div>
+
+    <!-- Burchakdagi tugmalar -->
+    <button id="view-list-btn" class="corner-btn">All phone numbers</button>
+    <button id="add-btn" class="corner-btn right-btn">Add phone number</button>
+
+    <!-- Dark/Light Mode Icon -->
+    <button id="theme-toggle-btn" class="theme-icon">🌙</button>
+
+    <!-- Modal for adding a number -->
+    <div id="add-modal" class="modal hidden">
+      <div class="modal-content">
+        <h2>Add phone number</h2>
+        <input type="text" id="new-number" placeholder="+998 xx xxx xx xx" />
+        <div class="modal-buttons">
+          <button id="cancel-add-btn" class="cancel-btn">Cancel</button>
+          <button id="submit-add-btn" class="submit-btn">Add</button>
+        </div>
+      </div>
+    </div>
+
+    <!-- Modal for viewing the list -->
+    <div id="list-modal" class="modal hidden">
+      <div class="modal-content">
+        <h2>All phone numbers</h2>
+        <ul id="number-list">
+          <!-- Raqamlar shu yerga qo‘shiladi -->
+        </ul>
+        <div class="modal-buttons">
+          <button id="close-list-btn" class="cancel-btn">Cancel</button>
+        </div>
+      </div>
+    </div>
+
+    <script src="./script.js"></script>
+  </body>
+</html>
