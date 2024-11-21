@@ -1,4 +1,4 @@
-let phoneNumbers = [
+let TEL = [
   "+998 90 123 45 67",
   "+998 91 234 56 78",
   "+998 93 345 67 89",
@@ -42,13 +42,13 @@ const themeToggleBtn = document.getElementById("theme-toggle-btn");
 function randomNum() {
   randomBtn.setAttribute("disabled", true);
   const interval = setInterval(() => {
-    let randomNumber = Math.floor(Math.random() * phoneNumbers.length);
-    displayNumber.textContent = phoneNumbers[randomNumber];
+    let randomNumber = Math.floor(Math.random() * TEL.length);
+    displayNumber.textContent = TEL[randomNumber];
   }, 100);
   setTimeout(() => {
     clearInterval(interval);
     randomBtn.removeAttribute("disabled");
-    phoneNumbers.splice(phoneNumbers.indexOf(displayNumber.textContent), 1);
+    TEL.splice(TEL.indexOf(displayNumber.textContent), 1);
   }, 3000);
 }
 randomBtn.addEventListener("click", randomNum);
@@ -68,7 +68,7 @@ cancelAddBtn.addEventListener("click", () => {
 submitAddBtn.addEventListener("click", () => {
   const newNumber = newNumberInput.value.trim();
   if (newNumber && /^\+998 \d{2} \d{3} \d{2} \d{2}$/.test(newNumber)) {
-    phoneNumbers.push(newNumber);
+    TEL.push(newNumber);
     alert("Raqam muvaffaqiyatli qo'shildi!");
     newNumberInput.value = "";
     addModal.classList.add("hidden");
@@ -80,7 +80,7 @@ submitAddBtn.addEventListener("click", () => {
 // Raqamlar ro'yxatini ko'rsatish
 viewListBtn.addEventListener("click", () => {
   numberList.innerHTML = ""; // Eski ro'yxatni tozalash
-  phoneNumbers.forEach((number) => {
+  TEL.forEach((number) => {
     const li = document.createElement("li");
     li.textContent = number;
     numberList.appendChild(li);
